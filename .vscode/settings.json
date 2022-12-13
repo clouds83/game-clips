@@ -1,5 +1,12 @@
 {
-    "editor.formatOnSave": true,
-    "html.format.indentHandlebars": true,
-    "html.format.indentInnerHtml": true
+ "editor.formatOnSave": true,
+ "html.format.indentHandlebars": true,
+ "html.format.indentInnerHtml": true,
+ "prettier.semi": false,
+ "css.completion.completePropertyWithSemicolon": false,
+ "less.completion.completePropertyWithSemicolon": false,
+ "scss.completion.completePropertyWithSemicolon": false,
+ "typescript.format.semicolons": "remove",
+ "javascript.format.insertSpaceAfterSemicolonInForStatements": false,
+ "typescript.format.insertSpaceAfterSemicolonInForStatements": false
 }
