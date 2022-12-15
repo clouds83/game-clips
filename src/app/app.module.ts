@@ -9,9 +9,22 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+
+import { VideoModule } from './video/video.module';
+import { UploadComponent } from './video/upload/upload.component';
+import { ClipComponent } from './clip/clip.component';
 
 @NgModule({
-  declarations: [AppComponent, NavComponent],
+  declarations: [
+    AppComponent,
+    NavComponent,
+    HomeComponent,
+    AboutComponent,
+    UploadComponent,
+    ClipComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -19,6 +32,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    VideoModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
