@@ -4,7 +4,8 @@ import {
   OnDestroy,
   Input,
   OnChanges,
-  SimpleChanges,
+  Output,
+  EventEmitter,
 } from '@angular/core';
 import { ModalService } from 'src/app/services/modal.service';
 import IClip from 'src/app/models/clip.model';
@@ -18,6 +19,7 @@ import { ClipService } from 'src/app/services/clip.service';
 })
 export class EditComponent implements OnInit, OnDestroy, OnChanges {
   @Input() activeClip: IClip | null = null;
+  @Output() update = new EventEmitter();
 
   inSubmission = false;
   showAlert = false;
@@ -58,6 +60,10 @@ export class EditComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   async submit() {
+    if (!this.activeClip) {
+      return;
+    }
+
     this.inSubmission = true;
     this.showAlert = true;
     this.alertColor = 'blue';
@@ -71,6 +77,9 @@ export class EditComponent implements OnInit, OnDestroy, OnChanges {
       this.alertMsg = 'Something went wrong! Try again later.';
       return;
     }
+
+    this.activeClip.title = this.title.value;
+    this.update.emit(this.activeClip);
 
     this.inSubmission = false;
     this.alertColor = 'green';
