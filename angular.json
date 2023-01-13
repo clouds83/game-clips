@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "game-clips": {
+    "clipz": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/game-clips",
+            "outputPath": "dist/clipz",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": ["zone.js"],
@@ -66,10 +66,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "game-clips:build:production"
+              "browserTarget": "clipz:build:production"
             },
             "development": {
-              "browserTarget": "game-clips:build:development"
+              "browserTarget": "clipz:build:development"
             }
           },
           "defaultConfiguration": "development",
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "game-clips:build"
+            "browserTarget": "clipz:build"
           }
         },
         "test": {

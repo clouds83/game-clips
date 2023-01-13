@@ -6,6 +6,10 @@ body {
   background-color: #161d31;
 }
 
+a {
+  cursor: pointer;
+}
+
 .material-icons.text-base {
   font-size: inherit;
 }
@@ -123,6 +127,12 @@ body {
   border-radius: 100%;
   -webkit-animation: shadow 1.5s ease-in-out alternate infinite;
   animation: shadow 1.5s ease-in-out alternate infinite;
+}
+
+.logo {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 @-webkit-keyframes shadow {

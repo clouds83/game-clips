@@ -1,55 +1,92 @@
 <!-- Header -->
 <header id="header" class="bg-secondary">
-  <nav class="container mx-auto flex justify-start items-center py-8 px-4">
+  <nav class="container mx-auto flex items-center py-8 px-4 justify-between">
     <!-- App Name -->
-    <a class="text-3xl text-indigo-400 font-bold uppercase mr-4" routerLink="/">Clipz</a>
+    <a
+      class="logo text-3xl text-indigo-400 font-bold uppercase mr-4"
+      routerLink="/"
+    >
+      Clipz
+      <svg
+        width=""
+        height="28"
+        viewBox="0 0 72 36"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 17.9036C0 28.3821 7.95536 36 17.7911 36H54.2089C64.0446 36 72 28.3821 72 17.9036C72 7.425 64.0446 0 54.2089 0H17.7911C7.95536 0 0 7.44107 0 17.9036ZM59.9143 14.3518C61.6339 14.3518 63.0321 15.7179 63.0321 17.4054C63.0321 19.0929 61.6339 20.4589 59.9143 20.4589C58.1946 20.4589 56.7964 19.0929 56.7964 17.4054C56.7964 15.7179 58.1946 14.3518 59.9143 14.3518ZM53.0839 7.68214C54.8196 7.68214 56.2179 9.04821 56.2179 10.7357C56.2179 12.4232 54.8196 13.7893 53.0839 13.7893C51.3643 13.7893 49.9661 12.4232 49.9661 10.7357C49.9661 9.04821 51.3643 7.68214 53.0839 7.68214ZM53.0839 21.0375C54.8196 21.0375 56.2179 22.3875 56.2179 24.0911C56.2179 25.7786 54.8196 27.1286 53.0839 27.1286C51.3643 27.1286 49.9661 25.7625 49.9661 24.0911C49.9821 22.3875 51.3643 21.0375 53.0839 21.0375ZM46.2536 14.3518C47.9893 14.3518 49.3875 15.7179 49.3875 17.4054C49.3875 19.0929 47.9893 20.4589 46.2536 20.4589C44.5339 20.4589 43.1357 19.0929 43.1357 17.4054C43.1357 15.7179 44.5339 14.3518 46.2536 14.3518ZM9 16.2804C9 15.8464 9.28929 15.4286 9.69107 15.4286H9.86786H15.4286V9.28929V9.19286C15.4286 8.74286 15.7661 8.35714 16.2 8.35714H19.7196C20.1536 8.35714 20.5875 8.74286 20.5875 9.19286V9.27321V15.4286H26.5661H26.6625C27.0964 15.4286 27.4982 15.8304 27.4982 16.2804V19.7679C27.4982 20.2339 27.0964 20.5714 26.6625 20.5714H26.5821H20.5714V26.775V26.8554C20.5714 27.3054 20.1375 27.6429 19.7036 27.6429H16.1839C15.7661 27.6429 15.4125 27.3375 15.4125 26.9196V26.7429V20.5714H9.81964H9.73929C9.30536 20.5714 9 20.2339 9 19.7679V16.2804Z"
+          fill="white"
+        />
+      </svg>
+    </a>
 
-    <div class="flex flex-grow items-center">
+    <div class="flex items-center">
       <!-- Primary Navigation -->
       <ul class="flex flex-row mt-1">
         <!-- Navigation Links -->
         <li *ngIf="!(auth.isAuthenticated$ | async); else authLinks">
-          <a class="px-2" href="#" (click)="openModal($event)">Login / Register</a>
+          <a class="px-2" href="#" (click)="openModal($event)"
+            >Login / Register</a
+          >
         </li>
 
         <ng-template #authLinks>
           <li>
-            <a class="px-2" routerLink="/manage" routerLinkActive="text-indigo-400"
-              [routerLinkActiveOptions]="{exact: true}">Manage</a>
+            <a
+              class="px-2"
+              routerLink="/manage"
+              routerLinkActive="text-indigo-400"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >Manage</a
+            >
           </li>
           <li>
-            <a class="px-2" routerLink="/upload" routerLinkActive="text-indigo-400"
-              [routerLinkActiveOptions]="{exact: true}">Upload</a>
+            <a
+              class="px-2"
+              routerLink="/upload"
+              routerLinkActive="text-indigo-400"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >Upload</a
+            >
           </li>
           <li>
             <a class="px-2" (click)="auth.logout($event)">Logout</a>
           </li>
         </ng-template>
 
-        <li>
+        <!-- <li>
           <a class="px-2" routerLink="/about" routerLinkActive="text-indigo-400"
             [routerLinkActiveOptions]="{exact: true}">About</a>
-        </li>
+        </li> -->
       </ul>
       <!-- Language Switcher -->
-      <ul class="flex flex-row ml-auto">
+      <!-- <ul class="flex flex-row ml-auto">
         <li>
           <a href="#">
             <img
               src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAA1CAMAAACA7r40AAAA/FBMVEWyIjNPN2Y8O27///8/PnBOTXxycpY9PG9RUX5HR3dIR3dLSnlPTny4uMpWVYFFRHVwb5VlZIx7e52DgqOIh6aIiKc+PXBJSHhTUn9hYYqyIjReXohgX4lYV4Lr6/C2tcjPdYB0c5haWYRYV4Nra5GJiac+PW/FxdTHYG1RUH3eoajltbtOTXvty89BQHHg3+hSUX6GYoC6usyVlbFycZa7u8yUk6+sq8FCQXO0tMe1tMhiYYpMS3pDQnNvbpTExNN8fJ7GxdTGxtWCgqLHx9WXlrLXi5SYl7Kiobrg4Oiiorrn5u3n5+2jo7ukpLvw8PTx8fX09Pf19firqsC5sMNxAAAAAnRSTlPQ9qN1Xw4AAAGlSURBVHhe7ZXFiiRBFEVjznvp5W7t7j3u7m7//y8D1dAMGbnI4jW5KOpsgjibCxFcrrtVEmcBGAGQJHB98d3EgEM/ygsg/nwRAy15rxQ4Ywh3JQX49hVgKA/Ad1hDkkGTMSQJjGkOEmo133FmwAEQyl8FfSj3gFgkzjsQAw6AZ796AP2fGcDBS8/ZQ7ZQlJ2d+bEFqp6zhuh9Cf9/pDtKkTs04KBTD4jgx3eICOodoshz1p7M6UUAUQ+Ap2Pf2UMI5UBBX18/Ut7ZQ84Jui10QKsbcA7dt77jxIBDt+sxMNzrD4HL+rZS4Iw9iTZkCjRFmsBUHkcUOGMI7dkpKezuQsrprM3zR76zN572ekdBX623gaONJ0d5B5sGHAA1+QTwRQJgX2Q/7+w9GZGlDZKERpoxgkbDc8s0WscGSo+WGMiNVlgwWuFNjdafPsDe7wzg3RvP2UNCFGVtbX6EoOo7PhgoO1rGnswHiquB4mqgfIcxpBTGkNslMf2JVMAShRxXgJtUwBKFbFbAqicL4U4qYNWThXCHFbDqyUK4swpY9WQhXBX8A2rVjaQ6HWXmAAAAAElFTkSuQmCC"
-              alt="en" width="22" height="14" class="inline-block">
+              alt="en"
+              width="22"
+              height="14"
+              class="inline-block"
+            />
             <span class="ml-1">English</span>
           </a>
         </li>
-        <li style="display: none;">
+        <li style="display: none">
           <a href="#">
             <img
               src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABDBAMAAACYZb3pAAAAHlBMVEUpQqK2q8384OL3qa/tKTkAI5Wrt9z////5t7ztKTlzpJCAAAAABXRSTlP++vjs1BQWlgsAAAAxSURBVHgBYmRAA4yKaAJCAugqQgHtyzENAAAAAiD7pzaDr4MfRVEURVGU36IoipK5FLWNJ6UFusbWAAAAAElFTkSuQmCC"
-              alt="fr" width="22" height="14" class="inline-block">
+              alt="fr"
+              width="22"
+              height="14"
+              class="inline-block"
+            />
             <span class="ml-1">French</span>
           </a>
         </li>
-      </ul>
+      </ul> -->
     </div>
   </nav>
 </header>
