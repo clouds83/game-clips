@@ -1,6 +1,6 @@
-CLIPZ - Share your gaming clips
+CLIPZ - Share your gaming clips (personal project)
 
-Personal project, still in progress but already functional.
+In progress but functional.
 
 Hosted prototype: https://game-clips-clouds83.vercel.app/
 
