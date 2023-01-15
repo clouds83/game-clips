@@ -14,6 +14,8 @@ Built with:
 - FFMPEG (Video processing)
 
 This project makes use of some advanced development techquines such as:
-- user creation and authentication
-- lazy loading with Angular Router
-- video processing with FFMPEG to generate thumbnails automatically
+- User creation and authentication
+- Lazy loading with Angular Router
+- Video processing with FFMPEG to generate thumbnails automatically
+
+![clipz home desktop](https://user-images.githubusercontent.com/1158183/212562318-da70363f-9a33-44be-94a2-b99b0d737840.png)
